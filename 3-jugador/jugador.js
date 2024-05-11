@@ -9,3 +9,9 @@ Escriba un programa que:
 - guarde la información del jugador (nombre, apellido, apodo) de forma conveniente.
 - imprima en consola un mensaje en el formato: {nombre} "{apodo}" {apellido} (notesé las comillas es parte de lo impreso).
 */
+let jugador = {
+    nombre: "Luciano",
+    apellido: "Rodriguez",
+    apodo: "Lucho"
+};
+console.log(`${jugador.nombre} "${jugador.apodo}" ${jugador.apellido}`);

@@ -16,3 +16,34 @@ Escriba un programa que:
 Tip: consulten los métodos de la clase Date
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
 */
+
+// Función para calcular la edad a partir de la fecha de nacimiento
+function edad(fechaNacimiento) {
+  // Convertimos la fecha de nacimiento en un objeto Date
+  let fechaNac = new Date(fechaNacimiento);
+  // Obtenemos la fecha actual
+  let fechaActual = new Date();
+  // Calculamos la diferencia de años entre la fecha actual y la fecha de nacimiento
+  let edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+  // Comprobamos si el cumpleaños ya pasó este año
+  if (fechaNac.getMonth() > fechaActual.getMonth() || (fechaNac.getMonth() === fechaActual.getMonth() && fechaNac.getDate() > fechaActual.getDate())) {
+      // Si no ha cumplido años este año, restamos 1 a la edad
+      edad--;
+  }
+  // Retornamos la edad calculada
+  return edad;
+}
+
+// Datos del jugador
+let jugador = {
+  nombre: "Luciano",
+  apellido: "Rodriguez",
+  apodo: "Lucho",
+  fechaNacimiento: "2003-07-16" // Fecha de nacimiento en formato año-mes-día
+};
+
+// Calculamos la edad del jugador
+let edadJugador = edad(jugador.fechaNacimiento);
+
+// Imprimimos el mensaje con el nombre, apodo, apellido y edad del jugador
+console.log(`${jugador.nombre} "${jugador.apodo}" ${jugador.apellido} (${edadJugador} años)`);
